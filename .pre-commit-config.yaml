@@ -1,0 +1,45 @@
+repos:
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v3.2.0
+  hooks:
+  - id: trailing-whitespace
+  - id: end-of-file-fixer
+  - id: check-yaml
+  - id: check-added-large-files
+  - id: check-toml
+- repo: local
+  hooks:
+  - id: black
+    name: black
+    entry: black
+    language: system
+    require_serial: true
+    types_or: [python]
+  - id: isort
+    name: isort
+    entry: isort
+    require_serial: true
+    language: system
+    types_or: [python]
+    args: ['--filter-files']
+  - id: ruff
+    name: ruff
+    entry: ruff
+    language: system
+    types_or: [python]
+    args: ['check', '--force-exclude']
+    require_serial: true
+  - id: mypy
+    name: mypy
+    entry: mypy
+    language: system
+    types_or: [python]
+    require_serial: true
+    pass_filenames: false
+  - id: test
+    name: test
+    entry: python3 -m unittest
+    language: system
+    types_or: [python]
+    require_serial: true
+    pass_filenames: false

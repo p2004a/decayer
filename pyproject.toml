@@ -1,0 +1,31 @@
+[project]
+name = 'decayer'
+version = '0.1.0'
+requires-python = ">=3.11.0"
+
+[project.optional-dependencies]
+dev = [
+    "black==24.4.*",
+    "ruff==0.4.1",
+    "isort==5.13.*",
+    "mypy==1.9.*",
+    "pre-commit~=3.7.0",
+]
+
+[project.scripts]
+decayer = "decayer:main"
+
+[tool.isort]
+profile = "black"
+
+[tool.mypy]
+files = "*.py"
+pretty = true
+show_error_context = true
+strict = true
+
+[tool.ruff.lint]
+select = [
+    "E", "F", "C90", "N", "UP", "YTT", "B", "A", "C4", "EM", "ISC",
+    "G", "RUF", "PIE", "SIM", "PTH", "PLC", "PLE", "PLW"
+]
