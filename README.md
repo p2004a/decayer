@@ -3,7 +3,7 @@ Decayer
 
 Decayer is a simple Python script that can decay files in a rclone remote path by frequency and age.
 
-It is usefull to manage things like backups that are create periodically and you want to keep recent ones at a higher frequency and older ones at a lower frequency.
+It is useful to manage file collections like backups that are created periodically and you want to keep recent ones at a higher frequency and older ones at a lower frequency.
 
 For example:
 
