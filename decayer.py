@@ -115,7 +115,7 @@ def decay_files(
     to_delete = decay(fdecays, ffiles)
     for f in to_delete:
         if not dry_run:
-            fs.delete(f"{path}/{f}")
+            fs.delete(f"{path.rstrip('/')}/{f}")
         print(f"Deleted {f}")
 
 
